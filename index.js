@@ -32,10 +32,12 @@
 
 
 
-
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years
+    function humanToDog(age) {
+        return age * 7;
+    }
 
 
 
@@ -57,8 +59,27 @@
 // 4 - 7 months 5% of their body weight
 // 7 - 12 months 4% of their body weight
 
-// when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
+    function dogFeeder (weight, age) {
+        if (age >= 1 && weight <= 5) {
+            return .05 * weight;
+        } else if (age >=1 && weight >= 6 && weight <= 10) {
+            return .04 * weight;
+        } else if (age >=1 && weight >= 11 && weight <= 15) {
+            return .03 * weight;
+        } else if (age >=1 && weight > 15) {
+            return .02 * weight;
+        } else if (age >= (1/6) && age <= (1/3)) {
+            return .1 * weight;
+        } else if (age >= (1/3) && age <= (7/12)) {
+            return .05 * weight;
+        } else if (age >= (7/12) && age <= (11/12)) {
+            return .04 * weight;
+    }
 
+
+
+// when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
+    console.log(dogFeeder(15, 1))
 
 
 
@@ -72,17 +93,64 @@
 
 
 
+    function game(choice) {
+        let pcChoice = Math.floor(Math.random() * Math.floor(3));
+        let i = 0
+
+        if (pcChoice === 0) {
+            console.log("paper")
+        }
+        if (pcChoice === 1) {
+            console.log("scissor")
+        }
+        if (pcChoice === 2) {
+            console.log("rock")
+        }
+
+        if (choice === "rock") {
+             i = 2;
+        }
+        if (choice === "scissors") {
+             i = 1;
+        }
+        if (choice === "paper") {
+             i
+        }
+
+        if (i === pcChoice ) {
+            console.log("You Tied!") ;
+        }
+        else if (i===0 && pcChoice === 2 ) {
+            console.log("You Won!")
+        }
+        else if (pcChoice === 0 && i === 2 ) {
+            console.log("You lost!")
+        }
+        else if (i > pcChoice) {
+            console.log("You Won!") ;
+        }
+
+        else if (i < pcChoice) {
+            console.log("You Lost!") ;
+        }
+    }
+
+    game("scissors")
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
-
+    function kmConverter(km) {
+        return km / 1.609344
+    }
 
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-
+    function cmConverter(cm) {
+        return cm * 30.48
+    }
 
 
 
@@ -91,7 +159,10 @@
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-
+    function annoyingSong(bottles) {
+        for (bottles = 0; bottles <=99; bottles--)
+        console.log(bottles, "99", (99 - bottles));
+    }
 
 
 
